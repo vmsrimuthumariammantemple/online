@@ -28,13 +28,16 @@ def slug_to_title(name):
 
 
 def find_images(directory):
-    """Return sorted list of (stem, full_path) for images in directory."""
+    """Return sorted list of (stem, full_path) for non-WebP images in directory."""
     images = []
     for f in sorted(directory.iterdir()):
-        if f.suffix.lower() in IMAGE_EXTENSIONS:
-            caption = slug_to_title(f.stem)
-            src = str(f).replace('\\', '/')
-            images.append({'src': src, 'caption': caption})
+        if f.suffix.lower() not in IMAGE_EXTENSIONS:
+            continue
+        if f.suffix.lower() == '.webp':
+            continue
+        caption = slug_to_title(f.stem)
+        src = str(f).replace('\\', '/')
+        images.append({'src': src, 'caption': caption})
     return images
 
 

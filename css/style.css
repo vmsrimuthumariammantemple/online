@@ -215,6 +215,35 @@ img { max-width: 100%; display: block; }
   animation: heroZoom 20s ease-in-out infinite alternate;
 }
 
+@supports (background-image: image-set("" type(""))) {
+  .hero-bg {
+    background:
+      linear-gradient(135deg, rgba(232, 125, 47, 0.15), rgba(201, 169, 78, 0.1)),
+      image-set(
+        url('../images/hero.webp') type('image/webp'),
+        url('../images/hero.jpeg') type('image/jpeg')
+      ) center/cover no-repeat;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-bg {
+    background-image:
+      linear-gradient(135deg, rgba(232, 125, 47, 0.15), rgba(201, 169, 78, 0.1)),
+      url('../images/hero-640w.jpeg');
+  }
+  @supports (background-image: image-set("" type(""))) {
+    .hero-bg {
+      background-image:
+        linear-gradient(135deg, rgba(232, 125, 47, 0.15), rgba(201, 169, 78, 0.1)),
+        image-set(
+          url('../images/hero-640w.webp') type('image/webp'),
+          url('../images/hero-640w.jpeg') type('image/jpeg')
+        );
+    }
+  }
+}
+
 @keyframes heroZoom {
   from { transform: scale(1); }
   to { transform: scale(1.08); }
@@ -409,6 +438,12 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(135deg, var(--saffron-light), var(--gold-light));
 }
 
+.about-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 img.temple-img {
   position: absolute;
   inset: 0;
@@ -423,6 +458,12 @@ img.temple-img {
   align-self: stretch;
   border-radius: var(--radius);
   background: linear-gradient(135deg, var(--cream), var(--gold-light));
+}
+
+.history-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 img.history-img {
@@ -725,6 +766,12 @@ img.history-img {
   overflow: hidden;
 }
 
+.album-cover picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .album-cover img {
   width: 100%;
   height: 100%;
@@ -769,6 +816,12 @@ img.history-img {
   color: var(--saffron);
   opacity: 0.6;
   transition: var(--transition);
+}
+
+.gallery-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .gallery-item img {
@@ -819,8 +872,16 @@ img.history-img {
   display: flex;
 }
 
-.lightbox-img {
+.lightbox-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 90%;
+  max-height: 80vh;
+}
+
+.lightbox-img {
+  max-width: 100%;
   max-height: 80vh;
   border-radius: 8px;
   object-fit: contain;
@@ -1241,6 +1302,11 @@ img.history-img {
   /* Lightbox */
   .lightbox {
     padding: 20px;
+  }
+
+  .lightbox-picture {
+    max-width: 100%;
+    max-height: 70vh;
   }
 
   .lightbox-img {

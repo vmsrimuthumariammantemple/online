@@ -47,6 +47,9 @@ const eventsData = [
 // Drop images into images/gallery/<Album-Name>/ and run:
 //   python scripts/generate-gallery.py
 
+// ===== WEBP HELPER =====
+const webpSrc = (src) => src.replace(/\.(jpe?g)$/i, '.webp');
+
 // ===== IMAGE ERROR FALLBACK =====
 document.addEventListener('error', (e) => {
   if (e.target.tagName === 'IMG') {
@@ -54,7 +57,13 @@ document.addEventListener('error', (e) => {
     const placeholder = document.createElement('i');
     placeholder.className = 'fas fa-image';
     placeholder.style.cssText = 'font-size:2rem;color:var(--saffron);opacity:0.6;';
-    e.target.parentNode?.insertBefore(placeholder, e.target);
+    const parent = e.target.parentNode;
+    const container = parent?.closest('.gallery-item, .album-cover, .event-img');
+    if (container && parent?.tagName === 'PICTURE') {
+      container.appendChild(placeholder);
+    } else {
+      parent?.insertBefore(placeholder, e.target);
+    }
   }
 }, true);
 
@@ -129,7 +138,7 @@ function renderEvents() {
   if (!eventsGrid) return;
   eventsGrid.innerHTML = eventsData.map(event => {
     const imgContent = event.img
-      ? `<img src="${event.img}" alt="${event.title}" loading="lazy">`
+      ? `<picture><source srcset="${webpSrc(event.img)}" type="image/webp"><img src="${event.img}" alt="${event.title}" loading="lazy"></picture>`
       : `<i class="fas fa-calendar-alt"></i>`;
     return `
       <article class="event-card">
@@ -154,7 +163,7 @@ function renderAlbumList() {
     const originalIdx = galleryData.length - 1 - idx;
     const count = album.images.length;
     const coverContent = album.cover
-      ? `<img src="${album.cover}" alt="${album.title}" loading="lazy">`
+      ? `<picture><source srcset="${webpSrc(album.cover)}" type="image/webp"><img src="${album.cover}" alt="${album.title}" loading="lazy"></picture>`
       : `<i class="fas fa-images"></i>`;
     return `
       <div class="album-card" data-album="${originalIdx}">
@@ -188,7 +197,7 @@ function renderAlbum(albumIndex) {
   galleryGrid.innerHTML = reversed.map((img, idx) => {
     const originalIdx = album.images.length - 1 - idx;
     const imgContent = img.src
-      ? `<img src="${img.src}" alt="${img.caption}" loading="lazy">`
+      ? `<picture><source srcset="${webpSrc(img.src)}" type="image/webp"><img src="${img.src}" alt="${img.caption}" loading="lazy"></picture>`
       : `<i class="fas fa-image"></i>`;
     return `
       <div class="gallery-item" data-img="${originalIdx}">
@@ -217,8 +226,10 @@ function openLightbox(index) {
 
   if (item.src) {
     lightboxImg.src = item.src;
+    document.getElementById('lightboxWebp').srcset = webpSrc(item.src);
   } else {
     lightboxImg.src = '';
+    document.getElementById('lightboxWebp').srcset = '';
   }
   lightboxImg.alt = item.caption;
   lightboxCaption.textContent = item.caption;
@@ -241,8 +252,10 @@ function navigateLightbox(dir) {
 
   if (item.src) {
     lightboxImg.src = item.src;
+    document.getElementById('lightboxWebp').srcset = webpSrc(item.src);
   } else {
     lightboxImg.src = '';
+    document.getElementById('lightboxWebp').srcset = '';
   }
   lightboxImg.alt = item.caption;
   lightboxCaption.textContent = item.caption;

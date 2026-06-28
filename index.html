@@ -6,6 +6,7 @@
   <meta name="description" content="Veesundaramalai Arulmigu Sri Muthumari Amman Aalayam – A divine abode of peace and spirituality. சனாதன தர்மத்தின் திவ்யமான ஆலயம்">
   <title>Veesundaramalai Arulmigu Sri Muthumari Amman Aalayam | வீசுந்தரமலை அருள்மிகு ஸ்ரீ முத்துமாரி அம்மன் ஆலயம்</title>
   <link rel="stylesheet" href="css/style.css">
+  <script>(function(){var w=new Image();w.onload=function(){document.documentElement.classList.add('webp')};w.onerror=function(){document.documentElement.classList.add('no-webp')};w.src='data:image/webp;base64,UklGRi4AAABXRUJQVlA4TCEAAAAvAUAAEB8wAiMwAgSSNtse/cXjxyCCmrYNWPwmHRsBmA=='})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Prata&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -73,7 +74,11 @@
           </div>
         </div>
         <div class="about-image">
-          <img src="images/amman-clear.jpeg" alt="Temple Image" class="temple-img">
+          <picture>
+            <source srcset="images/amman-clear-480w.webp 480w, images/amman-clear.webp 768w" sizes="(max-width: 992px) 100vw, 500px" type="image/webp">
+            <source srcset="images/amman-clear-480w.jpeg 480w, images/amman-clear.jpeg 768w" sizes="(max-width: 992px) 100vw, 500px" type="image/jpeg">
+            <img src="images/amman-clear.jpeg" alt="Temple Image" class="temple-img" loading="lazy">
+          </picture>
         </div>
       </div>
     </div>
@@ -89,7 +94,11 @@
       </div>
       <div class="history-content">
         <div class="history-image">
-          <img src="images/history.jpg" alt="Temple History" class="history-img">
+          <picture>
+            <source srcset="images/history-480w.webp 480w, images/history.webp 640w" sizes="(max-width: 992px) 100vw, 475px" type="image/webp">
+            <source srcset="images/history-480w.jpg 480w, images/history.jpg 640w" sizes="(max-width: 992px) 100vw, 475px" type="image/jpeg">
+            <img src="images/history.jpg" alt="Temple History" class="history-img" loading="lazy">
+          </picture>
         </div>
         <div class="history-text">
           <p>The origins of Veesundaramalai Arulmigu Sri Muthumari Amman Aalayam trace back many years, deeply rooted in the spiritual and cultural fabric of our village. According to local lore, the sacred Sri Muthumari Amman idol was discovered under divine circumstances, and the temple was established by the village elders with the blessings of great saints.</p>
@@ -191,7 +200,10 @@
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lightboxClose">&times;</button>
     <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <picture class="lightbox-picture">
+      <source id="lightboxWebp" type="image/webp">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </picture>
     <p class="lightbox-caption" id="lightboxCaption"></p>
     <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
   </div>
