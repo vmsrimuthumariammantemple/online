@@ -2,6 +2,48 @@
 // Run `python scripts/generate-gallery.py` to regenerate.
 const galleryData = [
   {
+    "title": "25 06 26 Thiruvizha Decorations",
+    "cover": "images/gallery/25-06-26 - Thiruvizha decorations/1.jpeg",
+    "images": [
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/1.jpeg",
+        "caption": "1"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-20 at 11.47.49.jpeg",
+        "caption": "Whatsapp Image 2026 06 20 At 11.47.49"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-20 at 11.47.50.jpeg",
+        "caption": "Whatsapp Image 2026 06 20 At 11.47.50"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-20 at 11.47.51.jpeg",
+        "caption": "Whatsapp Image 2026 06 20 At 11.47.51"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.19.jpeg",
+        "caption": "Whatsapp Image 2026 06 21 At 15.34.19"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.20 (1).jpeg",
+        "caption": "Whatsapp Image 2026 06 21 At 15.34.20 (1)"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.20.jpeg",
+        "caption": "Whatsapp Image 2026 06 21 At 15.34.20"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.21 (1).jpeg",
+        "caption": "Whatsapp Image 2026 06 21 At 15.34.21 (1)"
+      },
+      {
+        "src": "images/gallery/25-06-26 - Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.21.jpeg",
+        "caption": "Whatsapp Image 2026 06 21 At 15.34.21"
+      }
+    ]
+  },
+  {
     "title": "26 06 2026 Kodi Etram",
     "cover": "images/gallery/26-06-2026 - Kodi Etram/1.jpeg",
     "images": [
@@ -98,48 +140,6 @@ const galleryData = [
       {
         "src": "images/gallery/27-06-2026 - Paalkudam/WhatsApp Image 2026-06-27 at 22.34.12.jpeg",
         "caption": "Whatsapp Image 2026 06 27 At 22.34.12"
-      }
-    ]
-  },
-  {
-    "title": "Thiruvizha Decorations",
-    "cover": "images/gallery/Thiruvizha decorations/1.jpeg",
-    "images": [
-      {
-        "src": "images/gallery/Thiruvizha decorations/1.jpeg",
-        "caption": "1"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-20 at 11.47.49.jpeg",
-        "caption": "Whatsapp Image 2026 06 20 At 11.47.49"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-20 at 11.47.50.jpeg",
-        "caption": "Whatsapp Image 2026 06 20 At 11.47.50"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-20 at 11.47.51.jpeg",
-        "caption": "Whatsapp Image 2026 06 20 At 11.47.51"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.19.jpeg",
-        "caption": "Whatsapp Image 2026 06 21 At 15.34.19"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.20 (1).jpeg",
-        "caption": "Whatsapp Image 2026 06 21 At 15.34.20 (1)"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.20.jpeg",
-        "caption": "Whatsapp Image 2026 06 21 At 15.34.20"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.21 (1).jpeg",
-        "caption": "Whatsapp Image 2026 06 21 At 15.34.21 (1)"
-      },
-      {
-        "src": "images/gallery/Thiruvizha decorations/WhatsApp Image 2026-06-21 at 15.34.21.jpeg",
-        "caption": "Whatsapp Image 2026 06 21 At 15.34.21"
       }
     ]
   }

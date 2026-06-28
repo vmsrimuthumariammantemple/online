@@ -889,39 +889,45 @@ img.history-img {
 }
 
 .contact-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
   padding: 20px;
   background: var(--white);
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
 .contact-card:hover {
-  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-card i {
   font-size: 1.3rem;
   color: var(--gold);
-  margin-bottom: 10px;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .contact-card h4 {
   font-family: var(--font-heading);
   font-size: 0.95rem;
   color: var(--dark);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   font-weight: 400;
 }
 
 .contact-card p {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--text-light);
   line-height: 1.6;
 }
@@ -1210,10 +1216,7 @@ img.history-img {
     gap: 10px;
   }
 
-  /* Contact */
-  .contact-info {
-    grid-template-columns: 1fr;
-  }
+
 
   /* Events */
   .events-grid {

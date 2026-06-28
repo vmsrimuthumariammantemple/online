@@ -149,13 +149,15 @@ function renderAlbumList() {
   currentAlbumIndex = -1;
   galleryHeader.style.display = 'none';
 
-  galleryGrid.innerHTML = galleryData.map((album, idx) => {
+  const reversed = galleryData.slice().reverse();
+  galleryGrid.innerHTML = reversed.map((album, idx) => {
+    const originalIdx = galleryData.length - 1 - idx;
     const count = album.images.length;
     const coverContent = album.cover
       ? `<img src="${album.cover}" alt="${album.title}" loading="lazy">`
       : `<i class="fas fa-images"></i>`;
     return `
-      <div class="album-card" data-album="${idx}">
+      <div class="album-card" data-album="${originalIdx}">
         <div class="album-cover">${coverContent}</div>
         <div class="album-info">
           <h3 class="album-title">${album.title}</h3>
@@ -182,12 +184,14 @@ function renderAlbum(albumIndex) {
   galleryHeader.style.display = 'flex';
   galleryAlbumTitle.textContent = album.title;
 
-  galleryGrid.innerHTML = album.images.map((img, idx) => {
+  const reversed = album.images.slice().reverse();
+  galleryGrid.innerHTML = reversed.map((img, idx) => {
+    const originalIdx = album.images.length - 1 - idx;
     const imgContent = img.src
       ? `<img src="${img.src}" alt="${img.caption}" loading="lazy">`
       : `<i class="fas fa-image"></i>`;
     return `
-      <div class="gallery-item" data-img="${idx}">
+      <div class="gallery-item" data-img="${originalIdx}">
         ${imgContent}
         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
       </div>
